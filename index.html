@@ -85,7 +85,7 @@ section { padding: 2rem 0; }
 /* EXPERIENCE */
 .timeline { display: flex; flex-direction: column; gap: 2rem; }
 .role { padding: 1.8rem 2rem; background: var(--bg-card); border: 1px solid var(--border); transition: all 0.2s; border-radius: 8px; box-shadow: 0 1px 3px rgba(100, 49, 115, 0.05); }
-.role:hover { border-color: var(--accent); }
+.role:hover { border-color: var(--border); }
 .role-org { color: var(--accent); font-size: 1rem; font-weight: 600; margin-bottom: 1rem; }
 .role-org-dates { font-size: 0.82rem; color: var(--text-muted); font-weight: 400; }
 .subrole { margin-bottom: 1rem; }
@@ -109,11 +109,12 @@ section { padding: 2rem 0; }
 /* PROJECTS */
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.8rem; }
 .project-card { padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border); transition: all 0.2s; text-decoration: none; color: inherit; display: block; border-radius: 8px; box-shadow: 0 1px 3px rgba(100, 49, 115, 0.05); }
-.project-card:hover { border-color: var(--accent-bright); }
+.project-card:hover { border-color: var(--border); }
 .project-name { font-weight: 600; color: var(--white); font-size: 1rem; margin-bottom: 0.2rem; }
 .project-org { color: var(--accent-bright); font-size: 0.82rem; margin-bottom: 0.5rem; }
 .project-desc { color: var(--text-muted); font-size: 0.85rem; font-weight: 400; line-height: 1.7; }
-.project-link { display: inline-block; margin-top: 0.6rem; font-size: 0.8rem; color: var(--accent-bright); font-weight: 500; }
+.project-link { display: inline-block; margin-top: 0.8rem; font-size: 0.85rem; color: var(--accent-bright); font-weight: 500; text-decoration: none; transition: color 0.2s; }
+.project-link:hover { text-decoration: underline; }
 
 /* COMMUNITY */
 .community-card { padding: 1.8rem 2rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 1px 3px rgba(100, 49, 115, 0.05); }
@@ -153,10 +154,10 @@ footer { padding: 3rem 0; text-align: center; font-size: 0.78rem; color: var(--t
 
 /* RESPONSIVE */
 @media (max-width: 700px) {
-  .menu-toggle { display: flex; z-index: 101; }
-  .nav-links { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg); flex-direction: column; justify-content: center; align-items: center; gap: 2rem; z-index: 100; }
+  .menu-toggle { display: flex; position: relative; z-index: 110; }
+  .nav-links { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; height: 100dvh; background: var(--bg); flex-direction: column; justify-content: center; align-items: center; gap: 2rem; z-index: 105; }
   .nav-links.open { display: flex; }
-  .nav-links a { font-size: 1.1rem; padding: 0.5rem 1rem; min-height: 44px; }
+  .nav-links a { font-size: 1.1rem; padding: 0.5rem 1rem; min-height: 44px; display: flex; align-items: center; }
   .lang-switch { min-height: 44px; }
   .lang-opt { min-height: 44px; padding: 0.5rem 0.8rem; font-size: 0.85rem; }
   nav { padding: 1rem 1.2rem; }
@@ -167,7 +168,6 @@ footer { padding: 3rem 0; text-align: center; font-size: 0.78rem; color: var(--t
   .blog-section { padding: 2rem 1.5rem; }
   .role { padding: 1.3rem; }
   .about-vision { padding: 1.2rem 1.5rem; }
-  .btn { width: 100%; min-height: 48px; }
   .projects-grid { grid-template-columns: 1fr; }
   .blog-embed { grid-template-columns: 1fr; }
   .contact-row { flex-direction: column; gap: 1rem; }
@@ -390,13 +390,13 @@ body.lang-es [data-lang-inline="en"] { display: none; }
   <section class="fade-in" aria-labelledby="proj-heading">
     <h2 class="section-label" id="proj-heading"><span data-lang-inline="en">Selected Projects</span><span data-lang-inline="es">Proyectos</span></h2>
     <div class="projects-grid" data-lang="en">
-      <a href="https://www.chicos.net/humania" target="_blank" rel="noopener noreferrer" class="project-card"><div class="project-name">HumanIA</div><div class="project-org">Chicos.net</div><div class="project-desc">AI literacy curriculum for secondary students and teachers — understanding AI, its impact, and ethical implications.</div></a>
-      <a href="https://www.historiasparaarmar.org/" target="_blank" rel="noopener noreferrer" class="project-card"><div class="project-name">Historias para Armar</div><div class="project-org">Chicos.net & Disney</div><div class="project-desc">Digital storytelling for 21st-century skills and computational thinking. Ages 8–11. Free, online & offline.</div></a>
+      <div class="project-card"><div class="project-name">HumanIA</div><div class="project-org">Chicos.net</div><div class="project-desc">AI literacy curriculum for secondary students and teachers — understanding AI, its impact, and ethical implications.</div><a href="https://www.chicos.net/humania" class="project-link" target="_blank" rel="noopener noreferrer">View project ↗</a></div>
+      <div class="project-card"><div class="project-name">Historias para Armar</div><div class="project-org">Chicos.net & Disney</div><div class="project-desc">Digital storytelling for 21st-century skills and computational thinking. Ages 8–11. Free, online & offline.</div><a href="https://www.historiasparaarmar.org/" class="project-link" target="_blank" rel="noopener noreferrer">View project ↗</a></div>
       <div class="project-card"><div class="project-name">Digital Citizenship – Uruguay</div><div class="project-org">Plan Ceibal · OEI · AGESIC</div><div class="project-desc">National-scale digital citizenship curriculum for students and teachers across Uruguay.</div></div>
     </div>
     <div class="projects-grid" data-lang="es">
-      <a href="https://www.chicos.net/humania" target="_blank" rel="noopener noreferrer" class="project-card"><div class="project-name">HumanIA</div><div class="project-org">Chicos.net</div><div class="project-desc">Currícula de alfabetización en IA para estudiantes y docentes de secundaria.</div></a>
-      <a href="https://www.historiasparaarmar.org/" target="_blank" rel="noopener noreferrer" class="project-card"><div class="project-name">Historias para Armar</div><div class="project-org">Chicos.net & Disney</div><div class="project-desc">Narrativa digital para habilidades del siglo XXI y pensamiento computacional. 8–11 años. Gratuito.</div></a>
+      <div class="project-card"><div class="project-name">HumanIA</div><div class="project-org">Chicos.net</div><div class="project-desc">Currícula de alfabetización en IA para estudiantes y docentes de secundaria.</div><a href="https://www.chicos.net/humania" class="project-link" target="_blank" rel="noopener noreferrer">Ver proyecto ↗</a></div>
+      <div class="project-card"><div class="project-name">Historias para Armar</div><div class="project-org">Chicos.net & Disney</div><div class="project-desc">Narrativa digital para habilidades del siglo XXI y pensamiento computacional. 8–11 años. Gratuito.</div><a href="https://www.historiasparaarmar.org/" class="project-link" target="_blank" rel="noopener noreferrer">Ver proyecto ↗</a></div>
       <div class="project-card"><div class="project-name">Ciudadanía Digital – Uruguay</div><div class="project-org">Plan Ceibal · OEI · AGESIC</div><div class="project-desc">Currícula de ciudadanía digital a escala nacional para estudiantes y docentes de Uruguay.</div></div>
     </div>
   </section>
@@ -433,10 +433,9 @@ body.lang-es [data-lang-inline="en"] { display: none; }
     <h2 class="section-label" id="contact-heading"><span data-lang-inline="en">Contact</span><span data-lang-inline="es">Contacto</span></h2>
     <div class="about-text" style="margin-bottom:1rem"><span data-lang-inline="en">Always open to conversations about learning, knowledge, and AI.</span><span data-lang-inline="es">Siempre abierta a conversar sobre aprendizaje, conocimiento e IA.</span></div>
     <div class="contact-row">
-      <a href="mailto:vaninab.rossi@gmail.com">vaninab.rossi@gmail.com</a>
+      <span style="color:var(--text);font-size:0.95rem;font-weight:500">vaninab.rossi@gmail.com</span>
       <a href="https://www.linkedin.com/in/vaninabrossi/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
-    <a href="mailto:vaninab.rossi@gmail.com" class="btn btn-primary"><span data-lang-inline="en">Get in touch</span><span data-lang-inline="es">Hablemos</span></a>
   </section>
 
 </div>
@@ -448,7 +447,7 @@ body.lang-es [data-lang-inline="en"] { display: none; }
 <script>
 let currentLang='en';
 function setLang(lang){currentLang=lang;document.body.className=lang==='es'?'lang-es':'';document.documentElement.lang=lang;document.querySelectorAll('.lang-opt').forEach(function(b){var isActive=b.getAttribute('data-lang-val')===lang;b.classList.toggle('active',isActive);b.setAttribute('aria-pressed',String(isActive));});}
-function toggleMenu(){var n=document.getElementById('nav-links'),b=document.querySelector('.menu-toggle'),o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o));b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+function toggleMenu(){var n=document.getElementById('nav-links'),b=document.querySelector('.menu-toggle'),o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o));b.setAttribute('aria-label',o?'Close menu':'Open menu');b.innerHTML=o?'<svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>':'<svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';}
 document.querySelectorAll('#nav-links a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('nav-links').classList.remove('open');document.querySelector('.menu-toggle').setAttribute('aria-expanded','false');});});
 window.addEventListener('scroll',function(){document.getElementById('toTop').classList.toggle('visible',window.scrollY>600);});
 </script>
