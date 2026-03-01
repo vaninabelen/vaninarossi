@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vanina Belén Rossi — Learning Strategy & Knowledge Design</title>
+<meta name="description" content="Learning strategist specializing in AI-driven education, knowledge design, and curriculum development. 10+ years across EdTech, NGOs, public sector, and multinational tech.">
+<meta name="theme-color" content="#0e0b14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0e0b14;
+  --bg-card: #1a1525;
+  --bg-card-hover: #211a30;
+  --text: #f0ecf4;
+  --text-muted: #b5adc4;
+  --accent: #c4a0f5;
+  --accent-bright: #d8bfff;
+  --accent-dim: rgba(196, 160, 245, 0.12);
+  --accent-glow: rgba(196, 160, 245, 0.06);
+  --border: rgba(196, 160, 245, 0.14);
+  --focus-ring: #c4a0f5;
+  --white: #ffffff;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'Space Grotesk', system-ui, sans-serif;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
+::selection { background: var(--accent); color: var(--bg); }
+:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; }
+.skip-link { position: absolute; top: -100%; left: 1rem; z-index: 200; background: var(--accent); color: var(--bg); padding: 0.7rem 1.4rem; font-size: 0.9rem; font-weight: 600; text-decoration: none; }
+.skip-link:focus { top: 0.5rem; }
+
+/* NAV */
+nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 1.2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; background: rgba(14, 11, 20, 0.88); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+.nav-logo { font-family: var(--sans); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.08em; color: var(--accent); text-decoration: none; }
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+.nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.04em; transition: color 0.2s; font-weight: 400; padding: 0.25rem 0; }
+.nav-links a:hover, .nav-links a:focus-visible { color: var(--accent-bright); }
+.lang-toggle { background: none; border: 1px solid var(--border); color: var(--text-muted); padding: 0.4rem 0.8rem; font-size: 0.75rem; letter-spacing: 0.1em; cursor: pointer; font-family: var(--sans); transition: all 0.2s; min-height: 36px; }
+.lang-toggle:hover, .lang-toggle:focus-visible { border-color: var(--accent); color: var(--accent); }
+.menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
+.menu-toggle svg { width: 22px; height: 22px; stroke: var(--text-muted); stroke-width: 2; }
+.menu-toggle:hover svg, .menu-toggle:focus-visible svg { stroke: var(--accent); }
+
+.container { max-width: 960px; margin: 0 auto; padding: 0 2.5rem; }
+
+/* HERO */
+.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 5rem; }
+.hero-tag { font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; font-weight: 500; }
+.hero h1 { font-family: var(--serif); font-size: clamp(3rem, 7vw, 5rem); font-weight: 400; line-height: 1.1; margin-bottom: 0.3rem; color: var(--white); }
+.hero h1 em { font-style: italic; color: var(--accent-bright); }
+.hero-headline { font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin-top: 1.5rem; line-height: 1.8; font-weight: 300; }
+
+/* SECTIONS */
+section { padding: 6rem 0; }
+.section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent); font-weight: 600; margin-bottom: 2.5rem; display: flex; align-items: center; gap: 1rem; }
+.section-label::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--border), transparent); }
+
+/* ABOUT */
+.about-text { font-size: 1.05rem; line-height: 1.9; color: var(--text-muted); max-width: 720px; font-weight: 300; }
+.about-text strong { color: var(--white); font-weight: 500; }
+.about-text p + p { margin-top: 1rem; }
+.about-vision { margin-top: 1.5rem; padding: 1.5rem 2rem; border-left: 3px solid var(--accent); background: var(--accent-glow); font-size: 1.05rem; line-height: 1.8; color: var(--text); font-weight: 400; font-style: italic; }
+.keyword-bar { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; }
+.keyword-tag { padding: 0.35rem 0.9rem; font-size: 0.75rem; letter-spacing: 0.06em; background: var(--accent-dim); color: var(--accent-bright); border: 1px solid var(--border); font-weight: 500; }
+
+/* COMPETENCIES */
+.comp-list { display: flex; flex-direction: column; gap: 0.5rem; }
+.comp-item { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.5rem; background: var(--bg-card); border: 1px solid var(--border); transition: all 0.2s; cursor: default; }
+.comp-item:hover { border-color: var(--accent); background: var(--bg-card-hover); transform: translateX(4px); }
+.comp-emoji { font-size: 1.1rem; min-width: 1.5rem; text-align: center; }
+.comp-name { font-size: 0.95rem; font-weight: 500; color: var(--text); }
+
+/* EXPERIENCE — grouped by org */
+.timeline { display: flex; flex-direction: column; gap: 2.5rem; }
+.role { padding: 1.8rem 2rem; background: var(--bg-card); border: 1px solid var(--border); transition: all 0.2s; }
+.role:hover { border-color: var(--accent); }
+.role-org { color: var(--accent); font-size: 1rem; font-weight: 600; margin-bottom: 1rem; }
+.role-org-dates { font-size: 0.82rem; color: var(--text-muted); font-weight: 400; }
+.subrole { margin-bottom: 1rem; }
+.subrole:last-child { margin-bottom: 0; }
+.subrole-title { font-weight: 600; font-size: 0.98rem; color: var(--white); }
+.subrole-dates { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.4rem; }
+.role-bullets { list-style: none; }
+.role-bullets li { position: relative; padding-left: 1.2rem; font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 0.3rem; font-weight: 300; }
+.role-bullets li::before { content: '·'; position: absolute; left: 0; color: var(--accent); font-weight: 700; font-size: 1.1em; }
+.role-bullets a { color: var(--accent); text-decoration: none; }
+.role-bullets a:hover { text-decoration: underline; }
+.subrole-divider { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+
+/* EDUCATION */
+.edu-grid { display: flex; flex-direction: column; gap: 1.2rem; }
+.edu-item { padding: 1.2rem 1.5rem; background: var(--bg-card); border: 1px solid var(--border); }
+.edu-degree { font-weight: 600; color: var(--white); font-size: 0.98rem; }
+.edu-school { color: var(--accent); font-size: 0.88rem; }
+.edu-year { color: var(--text-muted); font-size: 0.82rem; }
+
+/* PROJECTS */
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
+.project-card { padding: 1.5rem; background: var(--bg-card); border: 1px solid var(--border); transition: all 0.2s; text-decoration: none; color: inherit; display: block; }
+.project-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+.project-name { font-weight: 600; color: var(--white); font-size: 1rem; margin-bottom: 0.2rem; }
+.project-org { color: var(--accent); font-size: 0.82rem; margin-bottom: 0.5rem; }
+.project-desc { color: var(--text-muted); font-size: 0.85rem; font-weight: 300; line-height: 1.7; }
+.project-link { display: inline-block; margin-top: 0.6rem; font-size: 0.8rem; color: var(--accent); }
+
+/* COMMUNITY */
+.community-card { padding: 1.8rem 2rem; background: var(--bg-card); border: 1px solid var(--border); }
+.community-name { font-weight: 600; color: var(--white); font-size: 1rem; margin-bottom: 0.2rem; }
+.community-orgs { color: var(--accent); font-size: 0.88rem; margin-bottom: 0.6rem; }
+.community-desc { color: var(--text-muted); font-size: 0.9rem; font-weight: 300; line-height: 1.7; }
+.community-year { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.5rem; }
+
+/* BLOG */
+.blog-section { background: var(--bg-card); border: 1px solid var(--border); padding: 3rem; text-align: center; }
+.blog-section h3 { font-family: var(--serif); font-size: 1.6rem; font-weight: 400; margin-bottom: 0.8rem; color: var(--white); }
+.blog-section > p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; font-weight: 300; }
+.blog-embed { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem; text-align: left; }
+.blog-placeholder { padding: 1.5rem; border: 1px dashed var(--border); text-decoration: none; color: inherit; display: block; transition: all 0.2s; }
+.blog-placeholder:hover, .blog-placeholder:focus-visible { border-color: var(--accent); background: var(--accent-glow); }
+.bp-title { font-weight: 500; color: var(--white); font-size: 0.92rem; margin-bottom: 0.3rem; }
+.bp-date { font-size: 0.78rem; color: var(--text-muted); }
+.bp-excerpt { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 300; line-height: 1.6; }
+
+/* CONTACT */
+.contact-row { display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 1rem; }
+.contact-row a { color: var(--accent); text-decoration: none; font-size: 0.95rem; border-bottom: 1px solid transparent; transition: border-color 0.2s; padding: 0.25rem 0; }
+.contact-row a:hover, .contact-row a:focus-visible { border-bottom-color: var(--accent-bright); }
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.8rem 2rem; font-size: 0.85rem; min-height: 44px; letter-spacing: 0.06em; font-family: var(--sans); text-decoration: none; transition: all 0.2s; font-weight: 500; margin-top: 1.5rem; }
+.btn-primary { background: var(--accent); color: var(--bg); border: 1px solid var(--accent); }
+.btn-primary:hover, .btn-primary:focus-visible { background: var(--accent-bright); }
+
+/* FOOTER */
+footer { padding: 3rem 0; text-align: center; font-size: 0.78rem; color: var(--text-muted); border-top: 1px solid var(--border); }
+
+/* BACK TO TOP */
+.to-top { position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px; background: var(--bg-card); border: 1px solid var(--border); color: var(--accent); display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+.to-top.visible { opacity: 1; pointer-events: auto; }
+.to-top:hover, .to-top:focus-visible { background: var(--accent-glow); border-color: var(--accent); }
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .menu-toggle { display: flex; z-index: 101; }
+  .nav-links { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg); flex-direction: column; justify-content: center; align-items: center; gap: 2rem; z-index: 100; }
+  .nav-links.open { display: flex; }
+  .nav-links a { font-size: 1.1rem; padding: 0.5rem 1rem; min-height: 44px; }
+  .lang-toggle { min-height: 44px; padding: 0.5rem 1rem; font-size: 0.85rem; }
+  nav { padding: 1rem 1.2rem; }
+  .container { padding: 0 1.2rem; }
+  section { padding: 4rem 0; }
+  .hero h1 { font-size: clamp(2.2rem, 8vw, 3.5rem); }
+  .blog-section { padding: 2rem 1.5rem; }
+  .role { padding: 1.3rem; }
+  .about-vision { padding: 1.2rem 1.5rem; }
+  .btn { width: 100%; min-height: 48px; }
+}
+@media (min-width: 701px) { .menu-toggle { display: none !important; } }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in { animation: fadeUp 0.7s ease-out both; }
+
+[data-lang="es"] { display: none; }
+body.lang-es [data-lang="es"] { display: block; }
+body.lang-es [data-lang="en"] { display: none; }
+body.lang-es [data-lang-inline="es"] { display: inline; }
+body.lang-es [data-lang-inline="en"] { display: none; }
+[data-lang-inline="es"] { display: none; }
+[data-lang-inline="en"] { display: inline; }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav role="navigation" aria-label="Main navigation">
+  <a href="#" class="nav-logo" aria-label="Vanina Rossi — Home">vaninarossi</a>
+  <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu()">
+    <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="#about"><span data-lang-inline="en">About</span><span data-lang-inline="es">Sobre mí</span></a>
+    <a href="#experience"><span data-lang-inline="en">Experience</span><span data-lang-inline="es">Experiencia</span></a>
+    <a href="#blog">Blog</a>
+    <a href="#contact"><span data-lang-inline="en">Contact</span><span data-lang-inline="es">Contacto</span></a>
+    <button class="lang-toggle" onclick="toggleLang()" id="lang-btn" aria-label="Switch language to Spanish">ES</button>
+  </div>
+</nav>
+
+<main id="main">
+<div class="container">
+
+  <!-- HERO -->
+  <header class="hero fade-in">
+    <div class="hero-tag" aria-hidden="true"><span data-lang-inline="en">Learning · Knowledge · AI</span><span data-lang-inline="es">Aprendizaje · Conocimiento · IA</span></div>
+    <h1>Vanina<br><em>Rossi.</em></h1>
+    <p class="hero-headline"><span data-lang-inline="en">Learning Strategy & Knowledge Design · AI-driven Education · Content & Curriculum Development</span><span data-lang-inline="es">Learning Strategy & Knowledge Design · Educación & IA · Desarrollo de Contenidos y Currícula</span></p>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="fade-in" aria-labelledby="about-heading">
+    <h2 class="section-label" id="about-heading"><span data-lang-inline="en">About</span><span data-lang-inline="es">Sobre mí</span></h2>
+    <div data-lang="es">
+      <div class="about-text"><p>Soy Especialista en Educación y Licenciada en Comunicación. Trabajo en la intersección de educación, tecnología y comunicación desde hace más de 10 años.</p></div>
+      <div class="about-vision">Lo que me define es la capacidad de conectar mundos. Creo que aprender es un proceso colectivo y que diseñar buenas experiencias de aprendizaje puede transformar equipos, organizaciones y comunidades. Me interesa especialmente cómo estructuramos conocimiento en la era de la IA generativa para que el aprendizaje siga siendo humano. Eso me mueve.</div>
+      <div class="about-text" style="margin-top:1.5rem">
+        <p>En <strong>Mercado Libre</strong> diseñé estrategias de knowledge management para IT&Producto y actualmente trabajo integrando inteligencia artificial en experiencias de aprendizaje cross compañía. Antes de eso, trabajé en <strong>Chicos.net</strong> desarrollando contenidos educativos sobre ciudadanía digital e inteligencia artificial. Desde ahí, los proyectos llegaron a estudiantes y docentes en Uruguay, Chile, México y Argentina — con alianzas como Disney (Historias para Armar) y Plan Ceibal.</p>
+        <p>También fui <strong>Asesora Pedagógica Digital</strong> en escuelas públicas de Buenos Aires y arranqué mi carrera como docente en el aula, como profesional de <strong>Enseñá por Argentina</strong>.</p>
+      </div>
+      <div class="keyword-bar" aria-label="Áreas de expertise"><span class="keyword-tag">Learning Strategy</span><span class="keyword-tag">Knowledge Management</span><span class="keyword-tag">L&D</span><span class="keyword-tag">Curriculum & Instructional Design</span><span class="keyword-tag">AI in Education</span><span class="keyword-tag">EdTech</span><span class="keyword-tag">Content Strategy</span></div>
+    </div>
+    <div data-lang="en">
+      <div class="about-text"><p>Education Specialist and Communications graduate. I've been working at the intersection of education, technology, and communication for over 10 years.</p></div>
+      <div class="about-vision">What defines me is the ability to connect worlds. I believe learning is a collective process, and that designing good learning experiences can transform teams, organizations, and communities. I'm especially interested in how we structure knowledge in the age of generative AI — so that learning remains human. That's what drives me.</div>
+      <div class="about-text" style="margin-top:1.5rem">
+        <p>At <strong>Mercado Libre</strong>, I designed knowledge management strategies for IT & Product and currently work integrating AI into company-wide learning experiences. Before that, I worked at <strong>Chicos.net</strong> developing educational content on digital citizenship and AI. From there, projects reached students and teachers in Uruguay, Chile, Mexico, and Argentina — through partnerships with Disney (Historias para Armar) and Plan Ceibal.</p>
+        <p>I was also a <strong>Digital Pedagogical Advisor</strong> in public schools in Buenos Aires and started my career as a classroom teacher through <strong>Enseñá por Argentina</strong> (Teach For All).</p>
+      </div>
+      <div class="keyword-bar" aria-label="Areas of expertise"><span class="keyword-tag">Learning Strategy</span><span class="keyword-tag">Knowledge Management</span><span class="keyword-tag">L&D</span><span class="keyword-tag">Curriculum & Instructional Design</span><span class="keyword-tag">AI in Education</span><span class="keyword-tag">EdTech</span><span class="keyword-tag">Content Strategy</span></div>
+    </div>
+  </section>
+
+  <!-- COMPETENCIES -->
+  <section class="fade-in" aria-labelledby="comp-heading">
+    <h2 class="section-label" id="comp-heading"><span data-lang-inline="en">Core Competencies</span><span data-lang-inline="es">Competencias Clave</span></h2>
+    <div class="comp-list" data-lang="en" role="list">
+      <div class="comp-item" role="listitem"><span class="comp-emoji" aria-hidden="true">🧭</span><span class="comp-name">Learning Strategy & Ecosystem Design</span></div>
+      <div class="comp-item" role="listitem"><span class="comp-emoji" aria-hidden="true">🧠</span><span class="comp-name">Knowledge Management for AI/LLM Readiness</span></div>
+      <div class="comp-item" role="listitem"><span class="comp-emoji" aria-hidden="true">🤖</span><span class="comp-name">AI Fluency — Designing with AI & about AI</span></div>
+      <div class="comp-item" role="listitem"><span class="comp-emoji" aria-hidden="true">📐</span><span class="comp-name">Curriculum & Content Strategy</span></div>
+      <div class="comp-item" role="listitem"><span class="comp-emoji" aria-hidden="true">✏️</span><span class="comp-name">Instructional Design</span></div>
+      <div class="comp-item" role="listitem"><span class="comp-emoji" aria-hidden="true">🤝</span><span class="comp-name">Cross-functional Collaboration</span></div>
+      <div class="comp-item" role="listitem"><span class="comp-emoji" aria-hidden="true">🌐</span><span class="comp-name">Digital Citizenship & AI Literacy Education</span></div>
+      <div class="comp-item" role="listitem"><span class="comp-emoji" aria-hidden="true">💻</span><span class="comp-name">EdTech Platforms & LMS</span></div>
+      <div class="comp-item" role="listitem"><span class="comp-emoji" aria-hidden="true">🎤</span><span class="comp-name">Workshop Facilitation & Teacher Training</span></div>
+      <div class="comp-item" role="listitem"><span class="comp-emoji" aria-hidden="true">📝</span><span class="comp-name">Content Development & Editing</span></div>
+      <div class="comp-item" role="listitem"><span class="comp-emoji" aria-hidden="true">📋</span><span class="comp-name">Project Scoping & Resource Planning</span></div>
+    </div>
+    <div class="comp-list" data-lang="es" role="list">
+      <div class="comp-item" role="listitem"><span class="comp-emoji" aria-hidden="true">🧭</span><span class="comp-name">Estrategia de Aprendizaje y Diseño de Ecosistemas</span></div>
+      <div class="comp-item" role="listitem"><span class="comp-emoji" aria-hidden="true">🧠</span><span class="comp-name">Knowledge Management para IA/LLMs</span></div>
+      <div class="comp-item" role="listitem"><span class="comp-emoji" aria-hidden="true">🤖</span><span class="comp-name">AI Fluency — Diseñar con IA y sobre IA</span></div>
+      <div class="comp-item" role="listitem"><span class="comp-emoji" aria-hidden="true">📐</span><span class="comp-name">Estrategia de Contenidos y Currícula</span></div>
+      <div class="comp-item" role="listitem"><span class="comp-emoji" aria-hidden="true">✏️</span><span class="comp-name">Diseño Instruccional</span></div>
+      <div class="comp-item" role="listitem"><span class="comp-emoji" aria-hidden="true">🤝</span><span class="comp-name">Colaboración Cross-funcional</span></div>
+      <div class="comp-item" role="listitem"><span class="comp-emoji" aria-hidden="true">🌐</span><span class="comp-name">Ciudadanía Digital y Alfabetización en IA</span></div>
+      <div class="comp-item" role="listitem"><span class="comp-emoji" aria-hidden="true">💻</span><span class="comp-name">Plataformas EdTech y LMS</span></div>
+      <div class="comp-item" role="listitem"><span class="comp-emoji" aria-hidden="true">🎤</span><span class="comp-name">Facilitación de Talleres y Formación Docente</span></div>
+      <div class="comp-item" role="listitem"><span class="comp-emoji" aria-hidden="true">📝</span><span class="comp-name">Desarrollo de Contenidos y Edición</span></div>
+      <div class="comp-item" role="listitem"><span class="comp-emoji" aria-hidden="true">📋</span><span class="comp-name">Alcance de Proyectos y Planificación de Recursos</span></div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="fade-in" aria-labelledby="exp-heading">
+    <h2 class="section-label" id="exp-heading"><span data-lang-inline="en">Experience</span><span data-lang-inline="es">Experiencia</span></h2>
+
+    <div class="timeline" data-lang="en">
+      <article class="role">
+        <div class="role-org">Mercado Libre <span class="role-org-dates">· Jul 2023 – Present</span></div>
+        <div class="subrole">
+          <h3 class="subrole-title">Learning Sr. Analyst</h3>
+          <div class="subrole-dates">Dec 2025 – Present</div>
+          <ul class="role-bullets"><li>Design and implement AI-powered learning strategies, experimenting with AI agents for training experiences.</li><li>Lead GenAI integration into company-wide learning workflows for scalable skill development.</li></ul>
+        </div>
+        <hr class="subrole-divider">
+        <div class="subrole">
+          <h3 class="subrole-title">Knowledge Management IT Sr. Analyst</h3>
+          <div class="subrole-dates">Jul 2023 – Nov 2025</div>
+          <ul class="role-bullets"><li>Designed KM strategies and skill development programs for developer audiences in IT & Product Academy.</li><li>Built structured knowledge bases optimized for AI/LLM ingestion, improving access for 1,000+ engineers.</li><li>Developed content frameworks and learning paths aligned with product roadmap.</li></ul>
+        </div>
+      </article>
+
+      <article class="role">
+        <div class="role-org">Chicos.net <span class="role-org-dates">· Jan 2020 – Mar 2023</span></div>
+        <div class="subrole">
+          <h3 class="subrole-title">Content Development Specialist – AI & Digital Citizenship</h3>
+          <ul class="role-bullets">
+            <li>Designed <a href="https://chicos.net/humania/" target="_blank" rel="noopener noreferrer">HumanIA</a> — AI literacy curriculum for secondary students and teachers.</li>
+            <li>Led content for <a href="https://www.historiasparaarmar.org" target="_blank" rel="noopener noreferrer">Historias para Armar</a> (Disney): digital storytelling for 21st-century skills.</li>
+            <li>Developed <a href="https://www.ceibal.edu.uy" target="_blank" rel="noopener noreferrer">Digital Citizenship Program for Uruguay</a> (Plan Ceibal, OEI, AGESIC) — deployed nationally.</li>
+            <li>Created teacher training for EducarChile and Ministry of Education of Tucumán.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="role">
+        <div class="role-org">Somos Red <span class="role-org-dates">· Feb 2022 – Apr 2023</span></div>
+        <div class="subrole">
+          <h3 class="subrole-title">EdTech Specialist – Digital Transformation</h3>
+          <ul class="role-bullets"><li>Developed institutional diagnostic instruments for digital transformation.</li><li>Technology advisor for the Fundaciones Grupo Petersen Award for Educational Innovation.</li></ul>
+        </div>
+      </article>
+
+      <article class="role">
+        <div class="role-org">INTEC – Ministry of Education, Buenos Aires City <span class="role-org-dates">· Mar 2017 – Aug 2022</span></div>
+        <div class="subrole">
+          <h3 class="subrole-title">Digital Pedagogical Advisor</h3>
+          <ul class="role-bullets"><li>Pedagogical consulting for technology integration across public schools.</li><li>Coordinated teacher PD programs, impacting 50+ institutions.</li><li>Promoted from Facilitator (2017) to Advisor (2018).</li></ul>
+        </div>
+      </article>
+
+      <article class="role">
+        <div class="role-org">Earlier roles <span class="role-org-dates">· 2014 – 2017</span></div>
+        <div class="subrole">
+          <div class="subrole-dates">Enseñá por Argentina · Inst. Inmaculada Concepción · Fundación Lider.ar · Libertate</div>
+          <ul class="role-bullets"><li>Teach For All fellow, classroom teacher, communication coordinator, content developer.</li></ul>
+        </div>
+      </article>
+    </div>
+
+    <div class="timeline" data-lang="es">
+      <article class="role">
+        <div class="role-org">Mercado Libre <span class="role-org-dates">· Jul 2023 – Presente</span></div>
+        <div class="subrole">
+          <h3 class="subrole-title">Learning Sr. Analyst</h3>
+          <div class="subrole-dates">Dic 2025 – Presente</div>
+          <ul class="role-bullets"><li>Diseño e implementación de estrategias de aprendizaje con IA, experimentando con agentes de IA para experiencias formativas.</li><li>Integración de GenAI en flujos de aprendizaje cross compañía para desarrollo de skills escalable.</li></ul>
+        </div>
+        <hr class="subrole-divider">
+        <div class="subrole">
+          <h3 class="subrole-title">Knowledge Management IT Sr. Analyst</h3>
+          <div class="subrole-dates">Jul 2023 – Nov 2025</div>
+          <ul class="role-bullets"><li>Diseño de estrategias de KM y desarrollo de skills para audiencias dev en IT & Product Academy.</li><li>Construcción de bases de conocimiento optimizadas para ingestión por IA/LLMs, mejorando acceso para 1.000+ ingenieros.</li><li>Desarrollo de frameworks de contenido y learning paths alineados con el roadmap de producto.</li></ul>
+        </div>
+      </article>
+
+      <article class="role">
+        <div class="role-org">Chicos.net <span class="role-org-dates">· Ene 2020 – Mar 2023</span></div>
+        <div class="subrole">
+          <h3 class="subrole-title">Especialista en Contenidos – IA y Ciudadanía Digital</h3>
+          <ul class="role-bullets">
+            <li>Diseño de <a href="https://chicos.net/humania/" target="_blank" rel="noopener noreferrer">HumanIA</a> — currícula de alfabetización en IA para secundaria.</li>
+            <li>Liderazgo en <a href="https://www.historiasparaarmar.org" target="_blank" rel="noopener noreferrer">Historias para Armar</a> (alianza con Disney): narrativa digital para habilidades del siglo XXI.</li>
+            <li><a href="https://www.ceibal.edu.uy" target="_blank" rel="noopener noreferrer">Programa de Ciudadanía Digital para Uruguay</a> (Plan Ceibal, OEI, AGESIC) — desplegado a nivel nacional.</li>
+            <li>Formación docente para EducarChile y Ministerio de Educación de Tucumán.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="role">
+        <div class="role-org">Somos Red <span class="role-org-dates">· Feb 2022 – Abr 2023</span></div>
+        <div class="subrole"><h3 class="subrole-title">Especialista en Tecnología – Transformación Digital</h3><ul class="role-bullets"><li>Instrumentos de diagnóstico institucional para la transformación digital.</li><li>Referente de tecnología en el Premio Fundaciones Grupo Petersen a la Innovación Educativa.</li></ul></div>
+      </article>
+
+      <article class="role">
+        <div class="role-org">INTEC – Ministerio de Educación, CABA <span class="role-org-dates">· Mar 2017 – Ago 2022</span></div>
+        <div class="subrole"><h3 class="subrole-title">Asesora Pedagógica Digital</h3><ul class="role-bullets"><li>Asesoramiento pedagógico para integración de tecnología en escuelas públicas.</li><li>Coordinación de desarrollo profesional docente, impactando 50+ instituciones.</li><li>Promoción de Facilitadora (2017) a Asesora (2018).</li></ul></div>
+      </article>
+
+      <article class="role">
+        <div class="role-org">Roles anteriores <span class="role-org-dates">· 2014 – 2017</span></div>
+        <div class="subrole"><div class="subrole-dates">Enseñá por Argentina · Inst. Inmaculada Concepción · Fundación Lider.ar · Libertate</div><ul class="role-bullets"><li>Profesional de Teach For All, docente, coordinadora de comunicación, desarrolladora de contenidos.</li></ul></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="fade-in" aria-labelledby="edu-heading">
+    <h2 class="section-label" id="edu-heading"><span data-lang-inline="en">Education</span><span data-lang-inline="es">Educación</span></h2>
+    <div class="edu-grid">
+      <div class="edu-item"><div class="edu-degree"><span data-lang-inline="en">Master's in Education</span><span data-lang-inline="es">Maestría en Educación</span></div><div class="edu-school">Universidad de San Andrés</div><div class="edu-year">2022 – 2023</div></div>
+      <div class="edu-item"><div class="edu-degree"><span data-lang-inline="en">University Teaching Certificate</span><span data-lang-inline="es">Profesora de Nivel Superior y Universitario</span></div><div class="edu-school">Universidad Austral</div><div class="edu-year">2014 – 2015</div></div>
+      <div class="edu-item"><div class="edu-degree"><span data-lang-inline="en">BA in Institutional & Advertising Communication</span><span data-lang-inline="es">Lic. en Comunicación Publicitaria e Institucional</span></div><div class="edu-school">Pontificia Universidad Católica Argentina</div><div class="edu-year">2008 – 2011</div></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="fade-in" aria-labelledby="proj-heading">
+    <h2 class="section-label" id="proj-heading"><span data-lang-inline="en">Selected Projects</span><span data-lang-inline="es">Proyectos</span></h2>
+    <div class="projects-grid" data-lang="en">
+      <a href="https://chicos.net/humania/" target="_blank" rel="noopener noreferrer" class="project-card"><div class="project-name">HumanIA</div><div class="project-org">Chicos.net</div><div class="project-desc">AI literacy curriculum for secondary students and teachers — understanding AI, its impact, and ethical implications.</div><span class="project-link">View project ↗</span></a>
+      <a href="https://www.historiasparaarmar.org" target="_blank" rel="noopener noreferrer" class="project-card"><div class="project-name">Historias para Armar</div><div class="project-org">Chicos.net & Disney</div><div class="project-desc">Digital storytelling for 21st-century skills and computational thinking. Ages 8–11. Free, online & offline.</div><span class="project-link">View project ↗</span></a>
+      <a href="https://www.ceibal.edu.uy" target="_blank" rel="noopener noreferrer" class="project-card"><div class="project-name">Digital Citizenship – Uruguay</div><div class="project-org">Plan Ceibal · OEI · AGESIC</div><div class="project-desc">National-scale digital citizenship curriculum for students and teachers across Uruguay.</div><span class="project-link">View project ↗</span></a>
+    </div>
+    <div class="projects-grid" data-lang="es">
+      <a href="https://chicos.net/humania/" target="_blank" rel="noopener noreferrer" class="project-card"><div class="project-name">HumanIA</div><div class="project-org">Chicos.net</div><div class="project-desc">Currícula de alfabetización en IA para estudiantes y docentes de secundaria.</div><span class="project-link">Ver proyecto ↗</span></a>
+      <a href="https://www.historiasparaarmar.org" target="_blank" rel="noopener noreferrer" class="project-card"><div class="project-name">Historias para Armar</div><div class="project-org">Chicos.net & Disney</div><div class="project-desc">Narrativa digital para habilidades del siglo XXI y pensamiento computacional. 8–11 años. Gratuito.</div><span class="project-link">Ver proyecto ↗</span></a>
+      <a href="https://www.ceibal.edu.uy" target="_blank" rel="noopener noreferrer" class="project-card"><div class="project-name">Ciudadanía Digital – Uruguay</div><div class="project-org">Plan Ceibal · OEI · AGESIC</div><div class="project-desc">Currícula de ciudadanía digital a escala nacional para estudiantes y docentes de Uruguay.</div><span class="project-link">Ver proyecto ↗</span></a>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section class="fade-in" aria-labelledby="community-heading">
+    <h2 class="section-label" id="community-heading">Community</h2>
+    <div class="community-card">
+      <div class="community-name">AI Literacy & Creator Collective</div>
+      <div class="community-orgs">Teach For All & Anthropic</div>
+      <div class="community-desc" data-lang="en">Member of a global community of educators exploring AI literacy, responsible AI adoption, and the design of learning experiences in the age of generative AI.</div>
+      <div class="community-desc" data-lang="es">Parte de una comunidad global de educadores que explora alfabetización en IA, adopción responsable de IA y el diseño de experiencias de aprendizaje en la era de la IA generativa.</div>
+      <div class="community-year">2025 –&nbsp;<span data-lang-inline="en">Present</span><span data-lang-inline="es">Presente</span></div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section id="blog" class="fade-in" aria-labelledby="blog-heading">
+    <h2 class="section-label" id="blog-heading">Blog</h2>
+    <div class="blog-section">
+      <h3><span data-lang-inline="en">Thinking out loud</span><span data-lang-inline="es">Pensando en voz alta</span></h3>
+      <p><span data-lang-inline="en">Notes on learning, knowledge design, and AI in education.</span><span data-lang-inline="es">Notas sobre aprendizaje, diseño de conocimiento e IA en educación.</span></p>
+      <div class="blog-embed">
+        <a href="#" class="blog-placeholder"><div class="bp-title">📝 Post title here</div><div class="bp-date">Month 2026</div><div class="bp-excerpt">Replace with your blog post description from Notion.</div></a>
+        <a href="#" class="blog-placeholder"><div class="bp-title">📝 Post title here</div><div class="bp-date">Month 2026</div><div class="bp-excerpt">Replace with your blog post description from Notion.</div></a>
+        <a href="#" class="blog-placeholder"><div class="bp-title">📝 Post title here</div><div class="bp-date">Month 2026</div><div class="bp-excerpt">Replace with your blog post description from Notion.</div></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="fade-in" aria-labelledby="contact-heading">
+    <h2 class="section-label" id="contact-heading"><span data-lang-inline="en">Contact</span><span data-lang-inline="es">Contacto</span></h2>
+    <div class="about-text" style="margin-bottom:1rem"><span data-lang-inline="en">Always open to conversations about learning, knowledge, and AI.</span><span data-lang-inline="es">Siempre abierta a conversar sobre aprendizaje, conocimiento e IA.</span></div>
+    <div class="contact-row">
+      <a href="mailto:vaninab.rossi@gmail.com">vaninab.rossi@gmail.com</a>
+      <a href="https://www.linkedin.com/in/vaninabrossi/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+    <a href="mailto:vaninab.rossi@gmail.com" class="btn btn-primary"><span data-lang-inline="en">Get in touch</span><span data-lang-inline="es">Hablemos</span></a>
+  </section>
+
+</div>
+</main>
+
+<a href="#" class="to-top" id="toTop" aria-label="Back to top">↑</a>
+<footer><span data-lang-inline="en">© 2026 Vanina Belén Rossi · Buenos Aires</span><span data-lang-inline="es">© 2026 Vanina Belén Rossi · Buenos Aires</span></footer>
+
+<script>
+let currentLang='en';
+function toggleLang(){currentLang=currentLang==='en'?'es':'en';document.body.className=currentLang==='es'?'lang-es':'';var b=document.getElementById('lang-btn');b.textContent=currentLang==='en'?'ES':'EN';b.setAttribute('aria-label',currentLang==='en'?'Switch language to Spanish':'Cambiar idioma a inglés');document.documentElement.lang=currentLang;}
+function toggleMenu(){var n=document.getElementById('nav-links'),b=document.querySelector('.menu-toggle'),o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o));b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+document.querySelectorAll('#nav-links a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('nav-links').classList.remove('open');document.querySelector('.menu-toggle').setAttribute('aria-expanded','false');});});
+window.addEventListener('scroll',function(){document.getElementById('toTop').classList.toggle('visible',window.scrollY>600);});
+</script>
+</body>
+</html>
