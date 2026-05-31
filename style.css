@@ -125,22 +125,6 @@ nav {
   color: var(--accent);
   border-color: var(--accent);
 }
-.cv-download {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.6rem 1.4rem;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  color: var(--text-muted);
-  transition: all 0.2s;
-}
-.cv-download:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-}
 .menu-toggle {
   display: none;
   background: none;
@@ -714,59 +698,3 @@ footer {
   animation: fadeUp 0.7s ease-out both;
 }
 
-@media print {
-  nav,
-  .cv-download,
-  .to-top,
-  .hero-tag,
-  .keyword-bar,
-  footer,
-  #blog {
-    display: none !important;
-  }
-  body,
-  .container {
-    background: #fff;
-    color: #000;
-    margin: 0;
-    padding: 0;
-  }
-  .container {
-    padding: 0 1cm;
-    max-width: 100%;
-  }
-  section {
-    padding: 1rem 0;
-    animation: none;
-  }
-  .hero {
-    min-height: unset;
-    padding: 1rem 0 0.5rem;
-  }
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-  .hero-headline {
-    font-size: 0.95rem;
-  }
-  .role,
-  .project-card,
-  .community-card {
-    break-inside: avoid;
-    box-shadow: none;
-    border: 1px solid #ddd;
-  }
-  .about-vision {
-    border-left: 3px solid #999;
-    background: none;
-  }
-  a {
-    color: #000;
-    text-decoration: none;
-  }
-  .contact-row a[href^="mailto"]::after {
-    content: " (" attr(href) ")";
-    font-size: 0.8rem;
-    color: #555;
-  }
-}
