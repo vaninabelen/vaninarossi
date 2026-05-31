@@ -34,6 +34,10 @@ html {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+  .fade-in {
+    animation: none;
+    opacity: 1;
+  }
 }
 body {
   font-family: var(--sans);
@@ -108,21 +112,24 @@ nav {
 .nav-links a:focus-visible {
   color: var(--accent-bright);
 }
-.lang-link {
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  font-weight: 600;
+.nav-links .lang-link {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: var(--text-muted);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 0.35rem 0.65rem;
-  transition: all 0.2s;
-  min-height: 36px;
+  background: transparent;
+  border: 1.5px solid var(--border);
+  border-radius: 100px;
+  padding: 0.3rem 0.85rem;
+  min-height: 32px;
   display: inline-flex;
   align-items: center;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
-.lang-link:hover {
-  color: var(--accent);
+.nav-links .lang-link:hover {
+  background: var(--accent-dim);
+  color: var(--accent-bright);
   border-color: var(--accent);
 }
 .menu-toggle {
@@ -156,10 +163,12 @@ nav {
 /* HERO */
 .hero {
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding-top: 5rem;
+  justify-content: flex-start;
+  padding-top: 8rem;
+  padding-bottom: 4rem;
 }
 .hero-tag {
   font-size: 0.8rem;
@@ -188,6 +197,21 @@ nav {
   margin-top: 1.5rem;
   line-height: 1.8;
   font-weight: 400;
+}
+.hero-cta {
+  align-self: flex-start;
+  margin-top: 2rem;
+  padding: 0.65rem 1.4rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: all 0.2s;
+}
+.hero-cta:hover {
+  color: var(--accent-bright);
+  border-color: var(--accent);
 }
 
 /* SECTIONS */
@@ -630,10 +654,9 @@ footer {
     display: flex;
     align-items: center;
   }
-  .lang-link {
+  .nav-links .lang-link {
     min-height: 44px;
-    padding: 0.5rem 0.8rem;
-    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
   }
   nav {
     padding: 1rem 1.2rem;
@@ -645,7 +668,9 @@ footer {
     padding: 1.5rem 0;
   }
   .hero {
-    min-height: 90vh;
+    min-height: 100svh;
+    padding-top: 6rem;
+    padding-bottom: 3rem;
   }
   .hero h1 {
     font-size: clamp(2.2rem, 8vw, 3.5rem);
