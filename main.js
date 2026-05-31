@@ -19,3 +19,37 @@ document.querySelectorAll("#nav-links a").forEach(function (a) {
 window.addEventListener("scroll", function () {
   document.getElementById("toTop").classList.toggle("visible", window.scrollY > 600);
 });
+
+// GA4 custom events
+if (typeof gtag === "function") {
+  document.querySelectorAll('a[href="#contact"], a[href*="linkedin"], a[href*="mailto"]').forEach(function (el) {
+    el.addEventListener("click", function () {
+      gtag("event", "cta_click", {
+        link_text: el.textContent.trim(),
+        link_url: el.href
+      });
+    });
+  });
+
+  document.querySelectorAll(".lang-link").forEach(function (el) {
+    el.addEventListener("click", function () {
+      gtag("event", "language_switch", {
+        target_lang: el.textContent.trim()
+      });
+    });
+  });
+
+  var sectionObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        gtag("event", "section_view", { section_id: entry.target.id });
+        sectionObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  ["about", "experience", "contact"].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) sectionObserver.observe(el);
+  });
+}
