@@ -165,10 +165,25 @@ nav {
   min-height: 100vh;
   min-height: 100svh;
   display: flex;
+  align-items: center;
+  background: var(--bg);
+  /* padding-top offsets the fixed nav so content feels visually centered */
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  will-change: transform;
+  overflow: hidden;
+}
+.hero-inner {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.hero-content {
+  display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  padding-top: 8rem;
-  padding-bottom: 4rem;
+  align-items: flex-start;
+  will-change: opacity, transform;
 }
 .hero-tag {
   font-size: 0.8rem;
@@ -199,7 +214,6 @@ nav {
   font-weight: 400;
 }
 .hero-cta {
-  align-self: flex-start;
   margin-top: 2rem;
   padding: 0.65rem 1.4rem;
   border: 1px solid var(--border);
@@ -650,8 +664,11 @@ footer {
   }
   .hero {
     min-height: 100svh;
-    padding-top: 6rem;
+    padding-top: 5rem;
     padding-bottom: 3rem;
+  }
+  .hero-inner {
+    padding: 0 1.2rem;
   }
   .hero h1 {
     font-size: clamp(2.2rem, 8vw, 3.5rem);
