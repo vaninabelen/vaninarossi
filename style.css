@@ -284,6 +284,36 @@ section {
   border-radius: 0 8px 8px 0;
 }
 
+/* WHAT I BUILD */
+.build-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.build-item {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+.build-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+.build-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 0.35rem;
+}
+.build-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
 /* COMPETENCIES */
 .comp-list {
   display: flex;
@@ -377,6 +407,66 @@ section {
   border: none;
   border-top: 1px solid var(--border);
   margin: 1rem 0;
+}
+.role-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 0.75rem;
+}
+.role-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0 0 0.6rem;
+}
+.role-desc:last-of-type {
+  margin-bottom: 0;
+}
+.role-initiatives {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.initiatives-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  margin-bottom: 0.65rem;
+}
+.initiatives-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.initiatives-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.initiative-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.initiative-link {
+  display: inline-block;
+  margin-top: 0.3rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--accent-bright);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.initiative-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0.15rem 0 0;
 }
 
 /* EDUCATION */
